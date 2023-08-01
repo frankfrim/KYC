@@ -2,6 +2,48 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+	    body {
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+h1 {
+  margin-bottom: 2000px;
+}
+
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  will-change: transform;
+  transform: translateZ(0);
+  display: flex;
+  height: 50px;
+  box-shadow: 0 -2px 5px -2px #333;
+  background-color: #fff;
+}
+.mobile-bottom-nav__item {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mobile-bottom-nav__item--active {
+  color: red;
+}
+.mobile-bottom-nav__item-content {
+  display: flex;
+  flex-direction: column;
+}
+	    </style>
+   
   <!-- Favicons -->
   <link href="video/favicon.png" rel="icon">
   <link href="video/favicon.png" rel="apple-touch-icon">
@@ -234,6 +276,61 @@ JotForm.paymentExtrasOnTheFly([null,null,null,{"name":"heading","qid":"3","text"
 <!-- partial -->
   
 </body>
+	<nav class="mobile-bottom-nav">
+    
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="https://sallejuna.blogspot.com"><i class="material-icons">home</i></a>
+			Home
+		</div>		
+	</div>
+   
+	<div class="mobile-bottom-nav__item">		
+		<div class="mobile-bottom-nav__item-content">
+			<a href="https://storejuna.blogspot.com/" style="color: #777;"><i class="material-icons">store</i></a>
+			 Store
+		</div>
+	</div>
+    
+    <div class="mobile-bottom-nav__item">		
+		<div class="mobile-bottom-nav__item-content">
+			<a href="https://shopjunastore.blogspot.com/" style="color: #777;"><i class="material-icons">shop</i></a>
+			 Shop
+		</div>
+	</div>
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="https://falconjunamarket.000webhostapp.com/" style="color: #777;"><i class="material-icons">sell</i></a>
+			Sell
+		</div>		
+	</div>
+	
+	<div class="mobile-bottom-nav__item">
+		<div class="mobile-bottom-nav__item-content">
+			<i class="material-icons">search</i>
+			Search
+		</div>		
+	</div>
+
+    <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+		<div class="mobile-bottom-nav__item-content">
+			<a href="https://frankfrim.github.io/KYC/" style="color: #777;" class="active"><i class="material-icons">more</i></a>
+			more
+		</div>	
+	</div>
+</nav>
+<!-- partial -->
+  <script>
+	  var navItems = document.querySelectorAll(".mobile-bottom-nav__item");
+navItems.forEach(function(e, i) {
+	e.addEventListener("click", function(e) {
+		navItems.forEach(function(e2, i2) {
+			e2.classList.remove("mobile-bottom-nav__item--active");
+		})
+		this.classList.add("mobile-bottom-nav__item--active");
+	});
+});
+  </script>
 </html>
 
 
